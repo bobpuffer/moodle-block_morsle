@@ -4,15 +4,10 @@
     xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
 >
   <TABLES>
-    <TABLE NAME="block_morsle" COMMENT="Default comment for block_morsle, please edit me">
-      <FIELDS>
-        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
-      </FIELDS>
+    <TABLE NAME="morsle_active" COMMENT="morsle_active table retrofitted from MySQL">
       <KEYS>
         <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
       </KEYS>
-    </TABLE>
-    <TABLE NAME="morsle_active" COMMENT="morsle_active table retrofitted from MySQL">
       <FIELDS>
         <FIELD NAME="id" TYPE="int" LENGTH="18" NOTNULL="true" SEQUENCE="true"/>
         <FIELD NAME="courseid" TYPE="int" LENGTH="18" NOTNULL="true" SEQUENCE="false"/>
