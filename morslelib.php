@@ -112,7 +112,7 @@ function link_to_gdoc($name, $link, $type = null, $modtype = 'url') {
 
 //	require_login($course->id); // needed to setup proper $COURSE
 
-    $context = context_course::instance($COURSE->id);
+    $context = get_context_instance(CONTEXT_COURSE, $course->id);
     require_capability('moodle/course:manageactivities', $context);
 
     if (!empty($course->groupmodeforce) or !isset($fromform->groupmode)) {
@@ -176,7 +176,7 @@ function link_to_gdoc($name, $link, $type = null, $modtype = 'url') {
     //	$returnfromfunc = url_add_instance($fromform, $mform);
     if (!$returnfromfunc or !is_number($returnfromfunc)) {
         // undo everything we can
-        $modcontext = context_module::instance($fromform->coursemodule);
+        $modcontext = get_context_instance(CONTEXT_MODULE, $fromform->coursemodule);
         delete_context(CONTEXT_MODULE, $fromform->coursemodule);
         $DB->delete_records('course_modules', array('id'=>$fromform->coursemodule));
 
@@ -193,7 +193,7 @@ function link_to_gdoc($name, $link, $type = null, $modtype = 'url') {
 
 
     // update embedded links and save files
-    $modcontext = context_module::instance($fromform->coursemodule);
+    $modcontext = get_context_instance(CONTEXT_MODULE, $fromform->coursemodule);
     if (!empty($introeditor)) {
         $fromform->intro = file_save_draft_area_files($introeditor['itemid'], $modcontext->id,
                                                       'mod_'.$fromform->modulename, 'intro', 0,
@@ -804,7 +804,8 @@ function html_footer() {
 
 function html_header($course, $wdir, $pagetitle="", $formfield=""){
 	global $CFG, $ME, $choose, $COURSE, $OUTPUT, $PAGE;
-        $coursecontext = context_course::instance($COURSE->id);
+
+    $coursecontext = get_context_instance(CONTEXT_COURSE, $COURSE->id);
 	$navlinks = array();
 	// $navlinks[] = array('name' => $course->shortname, 'link' => "../course/view.php?id=$course->id", 'type' => 'misc');
 
