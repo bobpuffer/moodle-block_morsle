@@ -2,9 +2,9 @@
 require_once('../../config.php');
 require_once("$CFG->dirroot/repository/morsle/lib.php");
 require_once("$CFG->dirroot/google/lib.php");
-$str = strtolower('65259-paid-111d-02');
-$owner = 'puffro01@luther.edu';
-//$owner = $str . '@luther.edu';
+$str = strtolower('65280-PAID-111D-23');
+//$owner = 'puffro01@luther.edu';
+$owner = $str . '@luther.edu';
 $title = $str . '-read';
 $morsle = new repository_morsle();
 //$morsle->get_token('drive');

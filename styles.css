@@ -18,16 +18,16 @@ background-color: #e3e9ff;
 /*	padding-left: 8px;*/
 }
 
-.block_morsle td.morsleleft {
-	margin-left: 15px;
+.block_morsle td.morslebottom {
+/*	padding-bottom: 5px;*/
 }
 
-.block_morsle td.morsleright {
-	margin-left: 15px; 
+.block_morsle td.morsletop {
+/*	padding-top: 10px; */
 }
 
 .block_morsle td.calendar {
-	padding-left: 10px;
+	padding-left: 0px;
 	padding-right: 0px;
 	padding-top: 0px;
 	padding-bottom: 0px;
